@@ -1,0 +1,144 @@
+<!-- Take a look how he splits all these into sections I should start think like this.
+Notice that all tags pretty much get a class and an id. using id we can use this info in javascript and use the
+class in css. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <title>Austin Claude page</title>
+
+</head>
+<body>
+    <header>
+      <div class = "logo">
+      <a href="#"><img src="my_logo.png" alt="" class="Austin_Claude"></a>
+      </div>
+        <button class = "nav-toggle" aria-label="toggle-navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav_item"> <a href="#home" class="nav_link">Home</a></li>
+                <li class="nav_item"> <a href="services" class="nav_link">My services</a></li>
+                <li class="nav_item"> <a href="#about" class="nav_link">About me</a></li>
+                <li class="nav_item"> <a href="#work" class="nav_link">My work</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- introduction, this is section 1!!!!! -->
+    <section class = "intro" id = "home">
+      <h1 class = "section_title section_title_intro">
+      Hi, I am <strong>Austin Claude </strong> </h1>
+      <p class="section_subtitle section_subtitle_intro">front-end dev</p>
+      <img src="Portfolio_pic.jpg" alt="a picture of me"> <!--for this i used the website canva, check out its benifits!-->
+    </section>
+
+    <!-- my services, this is section 2!!!!! -->
+    <section class="my_services" id = services> <!--here we want to make a small section that descibes what i can do -->
+        <h2 class = "section_title section_title_services"> What I do</h2> <!--want a header so explainng what i do -->
+        <div class="services"> <!--this will hold all three descriptions what i can do for the customer -->
+          <div class="service"><!--my first description-->
+            <h3>Fron-end web development</h3>
+            <p>I currently have an associates in computer science with a focus in front-end web development
+              now going for a bachelors in computer science at Cal State Fullerton.
+            I'm well driven at making projects from scratch and on my own or with team members.
+            I've been self teaching myself front-end web development for 2 years using tools given to me
+            from school such as object oriented programming and data structure.
+             </p>
+          </div>
+
+          <div class="service"><!--my second description-->
+            <h3>Mathematician</h3>
+            <p>While going to school achieving my associates in computer science I took on multiple
+            students struggling in mathamatics. I would take time out of my day to tutor students in calculus, trigonomitry, and
+          algebra. Tutoring other students would help me develop my team building skills because we would all try to figure
+        out the awnser together.  </p>
+          </div>
+
+          <div class="service"><!--my third description-->
+            <h3>Photographer</h3>
+            <p>Not only did i have a passion for web-development and mathamatics but, I also grew a passion for photography
+            and it's diverse software. I would constently take photos then, trasfer them to the adobe library and chose the appropriate
+          software such as, photoshop, lightroom, and premier pro. I still use these applications today to apply my own liking to each photos
+        and use these photos in my own websites.   </p>
+          </div>
+        </div>
+
+        <a href="#work" class="btn">My work</a>
+    </section>
+
+    <!-- About me this is section 3!!!!!-->
+    <section class="about_me" id = "about">
+      <h2 class="section_title section_title_about">Who I am</h2>
+      <p class="section_subtitle section_subtitle_about"></p>
+      <div class="about_me_body">
+        <p></p>
+        <p></p>
+      </div>
+      <img src="Portfolio_pic.jpg" alt="in my backyard">
+    </section>
+
+<!-- My work -->
+
+<section class="my_work" id = "work">
+  <h2 class="section_title">My work</h2>
+  <p class="section_subtitle"></p>
+  <div class="portfolio"> <!--here is where i will showcase some of my work-->
+    <!-- item 1 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 2 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 3 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 4 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 5 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 6 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 7 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+
+    <!-- item 8 -->
+    <a href="#" class="portolio_item">
+       <img src="#" alt="" class="portfolio_img">
+    </a>
+  </div>
+</section>
+
+<footer> <a href="mailto:austinclaude1@gmail.com" class="footer_link"> austinclaude1@gmail.com</a> </footer> <!--mailto: sends an email to me -->
+<ul class="social_list">
+  <li class="social_list_item"> <a href="#" class="social_list_link">a</a> </li>
+  <li class="social_list_item"> <a href="#" class="social_list_link">b</a> </li>
+  <li class="social_list_item"> <a href="#" class="social_list_link">c</a> </li>
+  <li class="social_list_item"> <a href="#" class="social_list_link">d</a> </li>
+</ul>
+
+</body>
+</html>
