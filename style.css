@@ -20,6 +20,8 @@
   --fs-h3: 1.25rem;
   --fs-body: 1rem;
 
+  --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25), 
+  0.125em 0.125em 0.25em rgba(0,0,0,0.5); /* Here we have two shadows the top layer and the bottom layer to give it a more relistic shadow if you will */
 
 }
 /* this is a media query that will have different settings when you shrink the screen to 800px
@@ -43,17 +45,49 @@ body{
   line-height: 1.6; /*this will set the spacing in between the lines for paragraphs
   for eample */
 }
+
+section{
+  padding: 5em 2em;
+}
+
 img{
-  filter: contrast(125%);
-  filter:saturate(110%);
-  width: 672px;
+  
   display: block;
   max-width: 100%;
 }
+
+strong{font-weight: var(--fs-h1);}
+
 .Austin_Claude{
   height: 7.5rem;
   width: 7.5rem;
   border-radius: 15px 15px;
+}
+
+:focus{ /* focus means that when we click on the button or "focused" on it then these are the properties it will have */
+  outline: 3px solid var(--clr-accent); /*property of outline will give it like a border for example */
+  outline-offset: 3px; /*how much spacing does it need? */
+}
+
+/* buttn */
+.btn{
+  display: inline-block;
+  padding: .5em 1.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer; /* changing the decoration of the cursor */
+  font-size: .8rem; /*as im growing or shrinking the website i want the text to as well with this size */
+  text-transform: uppercase; /* going to make my text uppercase at all times */
+  letter-spacing: 2px; /* all letters will have some space */
+  font-weight: var(--fw-bold);
+  transition: transform 200ms ease-in-out;/*says that he is using this when he goes into the hover mode but would be the same thing if i put this statement inside of hover */
+  border-radius: 5em 5em;
+}
+
+.btn:hover{
+  transform: scale(1.1);
+  
 }
 
 /* typography */
@@ -76,4 +110,222 @@ h2{
 
 h3{
   font-size: var(--fs-h3);
+}
+
+.section_title{
+  margin-bottom: .25em;
+}
+
+.section_title_intro{
+  font-weight: var(--fw-reg);
+}
+
+.section_title_intro strong{
+  display: block;
+}
+
+.section_subtitle{
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.section_subtitle_intro, 
+.section_subtitle_about{
+  background: var(--clr-accent);
+  padding: .25em 1em;
+  font-family: var(--ff-primary);
+  margin-bottom: 1em;
+}
+
+/* header */
+
+nav{
+  display: none;
+}
+
+/* Intro section */
+.intro{
+  position: relative;
+}
+
+.intro_img{
+    box-shadow: var(--bs);
+  }
+
+.section_subtitle_intro{
+  display: inline-block;
+}
+
+@media (min-width: 600px){
+  .intro{
+    display: grid;
+    width: min-content;
+    margin: 0 auto; /*helps align it in the middle */
+    grid-column-gap: 1em; /*each column will have a spacing of 8 */
+    grid-template-areas: /*here it will automatically create my own grids and rows for me with these classes around the img */
+    "img title"
+    "img subtitle";
+    grid-template-columns: min-content max-content; /*not to sure what this does really */
+  }
+
+  .intro_img{
+    grid-area: img;
+    min-width: 250px;
+    position: relative;
+    z-index: 2;
+  }
+
+
+  .section_subtitle_intro{
+    align-self: start;
+    grid-column: -1/1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+    border-radius: 5em 5em;
+  }
+}
+
+/* My services section */
+
+/* want to display my image nice!!! */
+.my_services{
+  background-color: var(--clr-dark);
+  background-image: url(img/fire-camp-photo.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section_title_services{
+  color: var(--clr-accent);
+  position: relative;
+}
+ /* when we say after we are talking about everything after that text this will only display a line */
+.section_title_services::after{
+  content: '';
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: currentColor; /*this means that i want to be the same color as my parent (maybe wrong wording but i understand). */
+  opacity: 0.25;
+}
+
+.services{
+  margin-bottom: 4em;
+}
+
+.service{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px){
+  .services{
+    display: flex; /*this will behaive like a inline-block but can have properties such as, height, width, ect. but inline-block cannot */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .service + .service{ /*this will take all the suiblings and margin all them to the left looks at sibling service then service, and so on */
+    margin-left: 2em;
+  }
+  .my_services{
+    background-position: center;
+  }
+}
+
+.about_me{
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.about_me_img{
+  box-shadow: var(--bs);
+}
+
+@media(min-width: 600px){
+  
+  .about_me{
+    display: grid;
+    grid-template-columns: 1fr 200px; /*i should look into this better so i can utilize this more often. */
+    grid-template-areas: 
+  "title img"
+  "subtitle img"
+  "text img";
+  grid-column-gap: 2em;
+  }
+
+
+  .section_title_about{
+    grid-area: title;
+  }
+
+
+  .section_subtitle_about{
+    grid-column: 1/-1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 2em);
+    padding-left: 1em;
+    padding-right: calc(200px + 4em);
+
+  }
+
+  
+
+  .about_me_img{
+    grid-area: img;
+    width: 200%;
+    height: 150%;
+    position: relative;
+  }
+}
+
+/* My Work */
+
+.my_work{
+  background-color:var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+
+}
+
+.section_subtitle_work{
+  color: var(--clr-accent);
+  font-weight: var(--fw-bold);
+  margin-bottom: 2em;
+}
+
+.portfolio{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.portfolio_item{
+  background: var(--clr-dark);
+  overflow: hidden;
+}
+
+.portfolio_img{
+  transition:
+  transform 750ms cubic-bezier(.5, 0, .5, 1), /*i dont know exactly what this does we should find out what this does on a later time. */
+  opacity 250ms linear;
+}
+
+/* .portfolio_item:focus{
+  position: relative;
+  z-index: 2;
+} */
+
+.portfolio_img:hover/*, 
+ .portfolio_item:focus .portfolio_img*/{
+  transform: scale(1.2);
+  opacity: .75;
 }
