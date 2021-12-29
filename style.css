@@ -46,6 +46,10 @@ body{
   for eample */
 }
 
+html{
+  scroll-behavior: smooth; /*this will make it towards where i click onto a button it will scoll nice and slow rather just a jump */
+}
+
 section{
   padding: 5em 2em;
 }
@@ -138,11 +142,121 @@ h3{
 }
 
 /* header */
-
-nav{
-  display: none;
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: var(--clr-accent); /*need to figure out how to add this color on the header so you can see the logo */
+  max-width: 100%;
 }
 
+
+
+.logo{
+  max-width: 150px;
+}
+
+.nav{ /*setting up my navigation bar when the user will click onto it */
+  position: fixed;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  transition: transform 250ms cubic-bezier(.5, 0, .5, 1); /*th-bezier function will time the transition in seconds */
+  transform: translateX(100%); /*this will only go 50% on the side of the screen starting from the left side */
+
+}
+
+
+
+.nav_list{
+  list-style: none;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly; /*take a look at this property more closly its nice to use */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_link{
+  color: inherit;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  text-decoration: none;
+}
+
+.nav_link:hover{
+  color: var(--clr-accent);
+}
+
+.nav_toggle{
+  background: transparent;
+  border: 0;
+  padding: .5em;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  top: 4em;
+  z-index: 1000;
+  
+}
+
+/*  
+
+.hamburger{
+  display: block;
+  position: relative;
+}
+*/
+.nav_open .nav{
+  transform: translateX(0);
+}
+
+.nav_open .nav_toggle{
+  position: fixed;
+}
+
+.nav_open .hamburger{
+  transform: rotate(.625turn)
+}
+
+.nav_open .hamburger::after{
+  opacity: 0;
+}
+
+.nav_open .hamburger::before{
+  transform: rotate(90deg) translateX(-6px);
+}
+
+
+
+/* this is all you need to create your own button but, i dont want all this so throw away. 
+
+
+.hamburger::before,
+.hamburger::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.hamburger::after{
+  bottom: 6px;
+}
+
+.hamburger::before{
+  top: 6px;
+  
+} 
+
+*/
 /* Intro section */
 .intro{
   position: relative;
@@ -315,7 +429,7 @@ nav{
 
 .portfolio_img{
   transition:
-  transform 750ms cubic-bezier(.5, 0, .5, 1), /*i dont know exactly what this does we should find out what this does on a later time. */
+  transform 750ms cubic-bezier(.5, 0, .5, 1), 
   opacity 250ms linear;
 }
 
@@ -324,8 +438,55 @@ nav{
   z-index: 2;
 } */
 
-.portfolio_img:hover/*, 
+.portfolio_img:hover/*, here is where we want to be able to zoom in when we hover over any image
  .portfolio_item:focus .portfolio_img*/{
   transform: scale(1.2);
   opacity: .75;
+}
+
+/* footer */
+
+.footer{
+  background: black;
+  color: var(--clr-accent);
+  text-align: center;
+  padding: 2.5em 0;
+
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer_link{
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+
+}
+
+
+.footer_link:hover,
+.social_list_link:hover{
+  opacity: .7;
+}
+
+.footer_link:hover{
+  text-decoration: underline;
+}
+
+.social_list{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 0;
+  padding: 0;
+}
+
+.social_list_item{
+  margin: 0 0.5;
+}
+
+.social_list_link{
+  padding: .5em;
 }

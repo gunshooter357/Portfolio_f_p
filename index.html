@@ -11,6 +11,7 @@ class in css. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/039b876fe8.js" crossorigin="anonymous"></script> <!--This is how i will get all my icons on the screen. You can also download the package if you would like but this is much easier for now-->
     <title>Austin Claude page</title>
 
 </head>
@@ -19,13 +20,13 @@ class in css. -->
       <div class = "logo">
       <a href="#"><img src="img/my_logo.png" alt="" class="Austin_Claude"></a>
       </div>
-        <button class = "nav-toggle" aria-label="toggle-navigation">
-            <span class="hamburger"></span>
+        <button class = "nav_toggle" aria-label="toggle-navigation">
+          <span class="hamburger"><img src="img/hamburger_menu.png" alt=""></span>
         </button>
         <nav class="nav">
-            <ul class="nav__list">
+            <ul class="nav_list">
                 <li class="nav_item"> <a href="#home" class="nav_link">Home</a></li>
-                <li class="nav_item"> <a href="services" class="nav_link">My services</a></li>
+                <li class="nav_item"> <a href="#services" class="nav_link">My services</a></li>
                 <li class="nav_item"> <a href="#about" class="nav_link">About me</a></li>
                 <li class="nav_item"> <a href="#work" class="nav_link">My work</a></li>
             </ul>
@@ -78,8 +79,8 @@ class in css. -->
       <h2 class="section_title section_title_about">Who I am</h2>
       <p class="section_subtitle section_subtitle_about">Austin Claude</p>
       <div class="about_me_body">
-        <p></p>
-        <p></p>
+        <p>Need to tell the people about me and how i have progressed into this feild ect.</p>
+        <p>What drives me and what my passion is.</p>
       </div>
       <img src="img/Portfolio_pic.jpg" alt="in my backyard" class = "about_me_img">
     </section>
@@ -122,13 +123,28 @@ class in css. -->
   </div>
 </section>
 
-<footer> <a href="mailto:austinclaude1@gmail.com" class="footer_link"> austinclaude1@gmail.com</a> </footer> <!--mailto: sends an email to me -->
-<ul class="social_list">
-  <li class="social_list_item"> <a href="#" class="social_list_link">a</a> </li>
-  <li class="social_list_item"> <a href="#" class="social_list_link">b</a> </li>
-  <li class="social_list_item"> <a href="#" class="social_list_link">c</a> </li>
-  <li class="social_list_item"> <a href="#" class="social_list_link">d</a> </li>
-</ul>
+<footer class = "footer"> 
+  <a href="mailto:austinclaude1@gmail.com" class="footer_link"> austinclaude1@gmail.com</a>  <!--mailto: sends an email to me -->
+      <ul class="social_list">
 
-</body>
+        <li class="social_list_item"> 
+          <a href="#" class="social_list_link"><i class="fab fa-facebook fa-3x"></i>
+          </a> 
+        </li> 
+
+        <li class="social_list_item"> 
+          <a href="#" class="social_list_link"><i class="fab fa-twitter fa-3x"></i></a> 
+        </li>
+
+        <li class="social_list_item"> 
+          <a href="#" class="social_list_link"><i class="fab fa-github fa-3x"></i></a>
+        </li>
+
+        <li class="social_list_item">
+          <a href="#" class="social_list_link"><i class="fab fa-instagram fa-3x"></i></a> 
+          </li>
+      </ul>
+    </footer>
+    <script src = "index.js"></script>
+  </body>
 </html>
